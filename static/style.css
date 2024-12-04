@@ -236,13 +236,13 @@ Settings for main styling
       
 #container{
 	flex: 1;
-  	display: flex;
-  	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
-  	margin: 0 auto;
-  	padding: 0;
-   background-color: var(--bg-color);
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--bg-color);
 }
 #container h2{
 	font-size: 1.5em;
@@ -265,6 +265,7 @@ main{
 main div{
 	min-width: 200px;
 	max-width: 1200px;
+  padding: 0 0.5em;
 }
 
 /* 
@@ -292,8 +293,8 @@ main.index > aside img{
 .index-links{
 	background-image: url("img/header-short-1124px.png");
 	background-position: top center;
-  	background-repeat: no-repeat;
-  	background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -348,7 +349,6 @@ Settings for other pages
 article{
 	width: 100vw;
 	margin: auto;
-	padding: 10px;
 }
 article > div{
 	display: flex;
