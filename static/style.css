@@ -1,0 +1,502 @@
+html{
+  box-sizing: border-box;
+}
+*,::before,::after{
+  box-sizing: inherit;
+}
+
+:root {
+	--bg-color: #fffaee;
+	--bg-color-header: rgba(0,0,0,0.7); /*alpha 70 */
+	--bg-color-footer: #b3b6ca;
+	--bg-color-dark: #1e293b;
+	--bg-color-index-links-shadow: rgba(99,99,99,0.4);
+	--bg-color-index-links: rgba(0,0,0,0.7);
+	--text-color: #000000;
+	--text-color-dark: #fffaee;
+	--text-color-cite: #6ec1e4;
+	--text-color-title: #055cb4;
+	--text-color-title-dark: #609ffd;
+	--text-color-link: #0e289c;
+	--text-color-link-dark: #93bdfc;
+	--text-color-footer: #000000;
+	--text-color-accent: #6ec1e4;
+	--text-color-nav: #ffffff;
+}
+
+html, body, div, img {
+  margin: auto;
+  padding: 0;
+  border: 0;
+   /*font-size: 100%;*/
+  font-size: 14pt;
+}
+
+body{
+  line-height: 1; /*no idea for what that is, but it changes something */
+/*  display: flex;
+  flex-direction:column;*/
+  min-height: 100vh;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  font-family: "Roboto", "Noto", sans-serif;
+  line-height: 1.6;
+  margin:0;
+  padding:0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1,h2,h3{
+	text-align:center;
+	font-family: "Roboto+Mono", sans-serif;
+}
+
+
+a{
+	display: inline-block;
+	text-decoration: none;
+	color: var(--text-color-link);
+	margin: 0 1%;
+	/*To delay the change to :hover by 0.25sex */
+	transition: all .25s ease-in;
+}
+
+img{
+	width: 100%;
+	height: auto;
+}
+
+.img-credit{
+	padding:0.2em;
+	font-size: 0.85em;
+	font-style: italic;
+	text-align: right;
+}
+
+/* 
+--------------------------------------
+Settings for header styling
+--------------------------------------
+*/
+#header-index{
+	position: relative;
+ 	height: 300px;
+  	background-image: url("img/header-wide-650px.png");
+  	background-color: var(--bg-color);
+  	background-attachment: fixed;
+  	background-position: bottom center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	z-index: 1;
+ /* background-size: cover; I need to make a media query, start with mobile and have that image until px 1800.*/
+}
+
+
+#header-page{
+	position: relative;
+	background-image: url("img/header-wide-650px.png");
+	height: 300px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#parallax-trees{
+	display: none;
+	position: absolute;
+	background-image: url("img/header-trees.png");
+	width: 100vw;
+	min-height: 200px;
+	height: auto;
+	bottom: 0%;
+	background-size: cover;
+	z-index: 2;
+}
+.page-title{
+	position: absolute;
+	bottom: 0;
+	color: var(--text-color-cite);
+  	left: 50%;
+  	transform: translate3d(-50%,-5%, 0);
+}
+.page-img{
+	display: none;
+	position: absolute;
+	background-color: var(--bg-color-index-links-shadow);
+	left: -150px;
+	bottom: 0;
+	width: 120px;
+	height: auto;
+}
+.cite{
+	position: absolute;
+	display:none;
+	color: var(--text-color-cite);
+	min-width: 15em;
+	max-width: 30em;
+	font-size: 1.5em;
+	top: 30%;
+	right: 10%;
+	padding: 0.5em;
+	float: right;
+	text-align: right;
+	rotate: 10deg;
+}
+.citation{
+	font-family: "Brush Script MT", "Noto", serif;
+	font-style: italic;
+	font-weight: bold;
+}
+.author{
+	font-style: normal;
+	font-weight: bold;
+}
+
+/* 
+--------------------------------------
+Settings for header and top navigation styling
+--------------------------------------
+*/
+
+header{
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100vw;
+ 	height: 300px;
+	background: var(--bg-color-header);
+	font-family: "Courier New", "Roboto", sans-serif;
+	padding-bottom: 1em;
+	overflow: hidden;
+	align-content: flex-start;
+}
+
+header img{
+  	max-width:200px;
+  	padding: 5px;
+}
+
+header h1{
+  	text-align: left;
+  	font-size: 1.8em;
+  	color: var(--text-color-nav);
+  	margin: 0 3vw;
+  	padding-top: 0.5em;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+header p{
+	font-size: 1.3em;
+  	color: var(--text-color-nav);
+  	padding-top:0;
+  	margin: 0 3vw;
+}
+
+nav{
+	align-self: center;
+	padding: 0 0.5em;
+	text-align: center;
+	font-size: 0.9em;
+}
+nav ul{
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	padding: 0 0.1em;
+	list-style: none;
+}
+nav li{
+	padding: 0.3em 0.5em;
+}
+nav a{
+	font-weight: bolder;
+	color: var(--text-color-nav);
+}
+nav a:focus,nav a:hover,
+nav li[aria-current] a:hover,
+nav li[aria-current] a:active{
+	text-decoration: underline;
+}
+
+/* 
+--------------------------------------
+Settings for main styling
+--------------------------------------
+*/  
+      
+#container{
+	flex: 1;
+  	display: flex;
+  	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+  	margin: 0 auto;
+  	padding: 0;
+   background-color: var(--bg-color);
+}
+#container h2{
+	font-size: 1.5em;
+	color: var(--text-color-title);
+}
+#container h3{
+	font-size: 1.2em;
+}
+
+main{
+	margin: 0 auto;
+	padding: 0;
+	width: 95%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100vw;
+	justify-content: center;
+}
+main div{
+	min-width: 200px;
+	max-width: 1200px;
+}
+
+/* 
+--------------------------------------
+Settings for index page styling
+--------------------------------------
+*/
+
+main.index div{
+	min-width: 200px;
+	max-width: 800px;
+}
+
+main.index > aside{
+	margin-top: 20px;
+}
+
+main.index > aside img{
+	max-width: 450px;
+	min-width: 300px;
+	height: auto;
+}
+
+/* Links on the bottom of index site below main container*/
+.index-links{
+	background-image: url("img/header-short-1124px.png");
+	background-position: top center;
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center; 
+	width: 100vw;
+	padding: 10px;
+}
+
+.index-links span{
+	text-align: center;
+	justify-content: center;
+	margin: 5px;
+	padding: 10px;
+	width: 150px;
+	height: auto;
+}
+.index-links a{
+	display: block;
+}
+.index-links span img{
+	width: 120px;
+}
+.index-links span p{
+	text-align: center;
+	color: var(--text-color-dark);
+}
+/* 
+--------------------------------------
+Settings for other pages
+--------------------------------------
+*/
+
+.aboutme > img{
+  max-width: 300px;
+}
+.summary{
+	background-color: var(--bg-color-dark);
+	color: var(--text-color-dark);
+	padding: 0.5em;
+	width: 100vw;
+	text-align: center;
+}
+.summary p{
+	max-width:900px;
+	margin: auto;
+	padding: 1em;
+}
+.summary a{
+	color: var(--text-color-link-dark);
+}
+
+article{
+	width: 100vw;
+	margin: auto;
+	padding: 10px;
+}
+article > div{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: auto;
+	justify-content: center;
+}
+
+article .description{
+	max-width: 650px;
+}
+article .media {
+	max-width: 450px;
+	min-width: 200px;
+	height: auto;
+}
+
+.dark{
+	position: relative;
+	background-image: url("img/header-short-1124px.png");
+	background-color: var(--bg-color-dark);
+	height: auto;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	color: var(--text-color-dark);
+}
+
+.dark h2, h3{
+	color: var(--text-color-title-dark);
+}
+
+.dark a{
+	color: var(--text-color-link-dark);
+}
+#container .dark h2, h3{
+	color: var(--text-color-title-dark);
+}
+
+
+/* 
+--------------------------------------
+Settings for footer styling
+--------------------------------------
+*/
+
+footer{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1em;
+	justify-content: space-around; 
+	min-height: 5em;
+	padding: 0.5em;
+	background: var(--bg-color-footer);
+	color: var(text-color-footer);
+}
+footer a{
+	color: var(--text-color-link);
+}
+
+#footer1{
+	text-align: left;
+}
+
+#footer2{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end; 
+	text-align: right;
+}
+#footer2 a{
+	margin: 1em;
+}
+
+/* 
+--------------------------------------
+Settings for movie galery
+--------------------------------------
+*/
+.movie-gallery{
+	display: flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+	width: 100vw;
+	justify-content: center;
+	margin: auto;
+}
+
+.movie{
+	border: 5px solid rgba(0,0,0,0.6);
+	border-radius: 5px;
+	max-width: 400px;
+	margin: 0.5em;
+	background-color:var(--bg-color-index-links-shadow);
+}
+
+.youtube-media{
+	position: relative;
+	padding-bottom: 56.25%;
+	width: 100%;
+}
+.youtube-media iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* 
+--------------------------------------
+Settings for media query
+--------------------------------------
+*/
+
+@media screen and (min-width: 768px){
+	header{
+		 height: auto;	
+	}
+	.cite{
+		display:inline;
+	}
+	#header-index{
+ 		height: 650px;
+ 		background-size:cover;
+ 		background-position: bottom center;
+	}
+	#parallax-trees{
+		display: block;
+	}
+	.page-img{
+		display: block;
+	}
+	.index-links span{
+		width: 250px;
+		height: auto;
+	}
+	.index-links span img{
+		width: 100%;
+	}
+	.page-title h2{
+		font-size: 2em;
+	}
+}
+
+@media screen and (min-width: 1100px){
+	.item-end{
+		order: 1;
+	}
+	.page-img{
+		display: block;
+		left: -200px;
+		width: 150px;
+	}
+}
