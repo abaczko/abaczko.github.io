@@ -80,7 +80,7 @@ Settings for header styling
 */
 #header-index{
 	position: relative;
- 	height: 300px;
+ 	height: 350px;
   	background-image: url("img/header-wide-650px.png");
   	background-color: var(--bg-color);
   	background-attachment: fixed;
@@ -95,7 +95,7 @@ Settings for header styling
 #header-page{
 	position: relative;
 	background-image: url("img/header-wide-650px.png");
-	height: 300px;
+	height: 350px;
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -117,9 +117,16 @@ Settings for header styling
 	position: absolute;
 	bottom: 0;
 	color: var(--text-color-cite);
-  	left: 50%;
-  	transform: translate3d(-50%,-5%, 0);
+  left: 50%;
+  transform: translate3d(-50%,-5%, 0)
 }
+
+.page-title h2{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .page-img{
 	display: none;
 	position: absolute;
@@ -164,7 +171,7 @@ header{
 	display: flex;
 	flex-wrap: wrap;
 	width: 100vw;
- 	height: 300px;
+ 	height: 350px;
 	background: var(--bg-color-header);
 	font-family: "Courier New", "Roboto", sans-serif;
 	padding-bottom: 1em;
