@@ -445,6 +445,7 @@ Settings for movie galery
 	border-radius: 5px;
 	max-width: 400px;
 	margin: 0.5em;
+  padding: 0.5em;
 	background-color:var(--bg-color-index-links-shadow);
 }
 
