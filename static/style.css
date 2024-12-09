@@ -291,10 +291,6 @@ main.index > aside img{
 
 /* Links on the bottom of index site below main container*/
 .index-links{
-	background-image: url("img/header-short-1124px.png");
-	background-position: top center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
